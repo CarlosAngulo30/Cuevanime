@@ -1,4 +1,4 @@
-const {Anime} = require('../models/Anime');
+const {Anime} = require('../models');
 
 class AnimeDAO{
     constructor(){}
@@ -41,7 +41,7 @@ class AnimeDAO{
 
     async actualizarAnime({id, nombre, sinopsis, uri, temporada, numerocapitulo}){
         try{
-            await Anime.update({nombre, sinopsis, idRating, uri, temporada, numerocapitulo}, {where: {id}});
+            await Anime.update({nombre, sinopsis, uri, temporada, numerocapitulo}, {where: {id}});
             const animeActualizado = await Anime.findByPk(id);
             return animeActualizado;
         }catch(err){

@@ -1,4 +1,4 @@
-const {Pelicula} = require('../models/Pelicula');
+const {Pelicula} = require('../models');
 
 class PeliculaDAO{
     constructor(){}
