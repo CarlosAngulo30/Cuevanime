@@ -15,9 +15,6 @@ module.exports = {
       sinopsis: {
         type: Sequelize.STRING
       },
-      idRating: {
-        type: Sequelize.INTEGER
-      },
       calificacionPromedio: {
         type: Sequelize.DECIMAL
       },
