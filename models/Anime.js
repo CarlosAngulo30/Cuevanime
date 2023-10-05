@@ -10,16 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Anime.hasMany(models.Reproductor, { 
+        foreignKey: 'idAnime' });
     }
   }
   Anime.init({
     nombre: DataTypes.STRING,
     sinopsis: DataTypes.STRING,
-    idRating: DataTypes.INTEGER,
-    calificacionPromedio: DataTypes.DECIMAL,
+    calificacionPromedio: DataTypes.FLOAT,
     temporada: DataTypes.STRING,
-    numeroCapitulo: DataTypes.INTEGER
+    numerocapitulo: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Anime',

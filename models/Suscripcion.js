@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Suscripcion.belongsTo(models.Usuario, { foreignKey: 'idsuscripcion' });
     }
   }
   Suscripcion.init({
     tipo: DataTypes.STRING,
     costo: DataTypes.DECIMAL,
-    fechaInicio: DataTypes.DATE,
-    fechaFin: DataTypes.DATE
+    fechainicio: DataTypes.DATE,
+    fechafin: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Suscripcion',
