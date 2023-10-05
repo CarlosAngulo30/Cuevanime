@@ -10,16 +10,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       uri: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       nombreReproducto: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       idPelicula: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Peliculas',
+          key:'id'
+        }
       },
       idAnime: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Animes',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,

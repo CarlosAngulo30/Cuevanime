@@ -10,13 +10,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nickname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       idsuscripcion: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull:false,
+        references:{
+          model:'Suscripcions',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,

@@ -13,13 +13,25 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idAnime: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Animes',
+          key:'id'
+        }
       },
       idPelicula: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Peliculas',
+          key:'id'
+        }
       },
       idUsuario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Usuarios',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,

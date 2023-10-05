@@ -10,16 +10,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tipo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       costo: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL,
+        allowNull: false
       },
       fechaInicio: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       fechaFin: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

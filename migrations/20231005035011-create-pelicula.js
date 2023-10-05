@@ -10,10 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombre: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       sinopsis: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       calificacionPromedio: {
         type: Sequelize.DECIMAL
