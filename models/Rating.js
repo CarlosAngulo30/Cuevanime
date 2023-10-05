@@ -10,15 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Rating.hasOne(models.Pelicula, { foreignKey: 'idPelicula'});
-      Rating.hasOne(models.Anime, { foreignKey: 'idAnime'});
-      Rating.hasOne(models.Usuario, { foreignKey: 'idUsuario'});
+      // define association here
     }
   }
   Rating.init({
     calificacion: DataTypes.INTEGER,
     idAnime: DataTypes.INTEGER,
-    idPelicula: DataTypes.idPelicula,
+    idPelicula: DataTypes.INTEGER,
     idUsuario: DataTypes.INTEGER
   }, {
     sequelize,

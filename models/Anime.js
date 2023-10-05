@@ -10,16 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Anime.hasMany(models.Rating, {foreignKey:'idRating'})
+      // define association here
     }
   }
   Anime.init({
     nombre: DataTypes.STRING,
     sinopsis: DataTypes.STRING,
     idRating: DataTypes.INTEGER,
-    uri: DataTypes.STRING,
+    calificacionPromedio: DataTypes.DECIMAL,
     temporada: DataTypes.STRING,
-    numerocapitulo: DataTypes.INTEGER
+    numeroCapitulo: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Anime',

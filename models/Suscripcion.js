@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Suscripcion.init({
     tipo: DataTypes.STRING,
     costo: DataTypes.DECIMAL,
-    fechainicio: DataTypes.DATE,
-    fechafin: DataTypes.DATE
+    fechaInicio: DataTypes.DATE,
+    fechaFin: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Suscripcion',

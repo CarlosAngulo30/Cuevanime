@@ -15,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Reproductor.init({
     uri: DataTypes.STRING,
-    nombreReproductor: DataTypes.STRING
+    nombreReproducto: DataTypes.STRING,
+    idPelicula: DataTypes.DECIMAL,
+    idAnime: DataTypes.DECIMAL
   }, {
     sequelize,
     modelName: 'Reproductor',
