@@ -10,14 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Pelicula.hasMany(models.Rating, {foreignKey:'idRating'})
+      Pelicula.belongsTo(models.Rating, {
+        sourceKey: 'idRating', 
+        foreignKey: 'idPelicula', 
+      });
+      Pelicula.belongsTo(models.Reproductor, { 
+        foreignKey: 'idPelicula' });
     }
   }
   Pelicula.init({
     nombre: DataTypes.STRING,
     sinopsis: DataTypes.STRING,
-    idRating: DataTypes.INTEGER,
-    uri: DataTypes.STRING
+    uri: DataTypes.STRING,
+    calificacionPromedio: DataTypes.FLOAT,
   }, {
     sequelize,
     modelName: 'Pelicula',
