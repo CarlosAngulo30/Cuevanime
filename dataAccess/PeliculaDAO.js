@@ -3,18 +3,9 @@ const {Pelicula} = require('../models');
 class PeliculaDAO{
     constructor(){}
 
-    async crearPelicula({nombre, sinopsis, idRating, uri}){
+    async crearPelicula({nombre, sinopsis, calificacionPromedio}){
         try{
-            const pelicula = await Pelicula.create({nombre, sinopsis, idRating, uri});
-            return pelicula;
-        }catch(e){
-            throw e;
-        }
-    }
-
-    async crearPelicula({nombre, sinopsis, uri}){
-        try{
-            const pelicula = await Pelicula.create({nombre, sinopsis, uri});
+            const pelicula = await Pelicula.create({nombre, sinopsis, calificacionPromedio});
             return pelicula;
         }catch(e){
             throw e;
@@ -39,9 +30,9 @@ class PeliculaDAO{
         }
     }
 
-    async actualizarPelicula({id, nombre, sinopsis, uri}){
+    async actualizarPelicula({id, nombre, sinopsis, calificacionPromedio}){
         try{
-            await Pelicula.update({nombre, sinopsis, uri}, {where: {id}});
+            await Pelicula.update({nombre, sinopsis, calificacionPromedio}, {where: {id}});
             const peliculaActualizada = await Pelicula.findByPk(id);
             return peliculaActualizada;
         }catch(e){

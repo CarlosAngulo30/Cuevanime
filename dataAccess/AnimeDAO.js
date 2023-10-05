@@ -3,18 +3,18 @@ const {Anime} = require('../models');
 class AnimeDAO{
     constructor(){}
 
-    async crearAnime({nombre, sinopsis, idRating, uri, temporada, numerocapitulo}){
+    async crearAnime({nombre, sinopsis, idRating, calificacionPromedio, temporada, numerocapitulo}){
         try{
-            const anime = await Anime.create({nombre, sinopsis, idRating, uri, temporada, numerocapitulo});
+            const anime = await Anime.create({nombre, sinopsis, idRating, calificacionPromedio, temporada, numerocapitulo});
             return anime;
         }catch(err){
             throw err;
         }
     }
 
-    async crearAnime({nombre, sinopsis, uri, temporada, numerocapitulo}){
+    async crearAnime({nombre, sinopsis, calificacionPromedio, temporada, numerocapitulo}){
         try{
-            const anime = await Anime.create({nombre, sinopsis, uri, temporada, numerocapitulo});
+            const anime = await Anime.create({nombre, sinopsis, calificacionPromedio, temporada, numerocapitulo});
             return anime;
         }catch(err){
             throw err;
@@ -39,9 +39,9 @@ class AnimeDAO{
         }
     }
 
-    async actualizarAnime({id, nombre, sinopsis, uri, temporada, numerocapitulo}){
+    async actualizarAnime({id, nombre, sinopsis, calificacionPromedio, temporada, numerocapitulo}){
         try{
-            await Anime.update({nombre, sinopsis, uri, temporada, numerocapitulo}, {where: {id}});
+            await Anime.update({nombre, sinopsis, calificacionPromedio, temporada, numerocapitulo}, {where: {id}});
             const animeActualizado = await Anime.findByPk(id);
             return animeActualizado;
         }catch(err){
